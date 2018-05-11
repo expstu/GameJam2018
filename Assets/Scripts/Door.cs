@@ -14,17 +14,27 @@ public class Door : MonoBehaviour
 	// Use this for initialization
     void OnTriggerEnter2D(Collider2D coll)
     {
-        timer = 2f;
-        collider = coll;
-        startTime = true;
+        if (coll.gameObject.tag == "Player")
+        {
+            timer = 2f;
+            collider = coll;
+            startTime = true;
+        }
+           
 
         
         
     }
     void OnTriggerExit2D(Collider2D coll)
     {
-        collider = null;
-        startTime = false;
+        if (coll.gameObject.tag == "Player")
+        {
+            coll.GetComponent<Role>().currentGrid=transform.parent;//当玩家离开这个门的时候，意味着玩家处于这个grid中。
+            coll.transform.SetParent(transform.parent);
+            collider = null;
+            startTime = false;
+        }
+        
 
 
 
@@ -35,12 +45,12 @@ public class Door : MonoBehaviour
         if (startTime)
         {
             timer -= Time.deltaTime;
-            Debug.Log(timer);
+           
         }
         if (timer <= 0)
         {
             collider.transform.position = targetDoorPos.position;
-
+            
             startTime = false;
             timer = 2f;
         }

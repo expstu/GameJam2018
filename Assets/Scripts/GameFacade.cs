@@ -119,5 +119,12 @@ public class GameFacade : MonoBehaviour {
     {
         mEnergyManager.StartEnergySystem();
     }
+
+    public void GameOver()
+    {
+       
+        mGameManager.GameOver();
+        mUIManager.PushPanel(UIPanelType.GameOver);
+    }
     #endregion
 }

@@ -25,8 +25,8 @@ public class PlayerManager : BaseManager
     /// </summary>
     public void InitRole()
     {
-        p1=new Role(RoleType.P1);
-        p2=new Role(RoleType.P2);
+        //p1=new Role(RoleType.P1);
+        //p2=new Role(RoleType.P2);
     }
 
     public void RandomPos(RoleType roleType)

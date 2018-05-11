@@ -32,6 +32,6 @@ public class PlayerMove2 : MonoBehaviour {
             //Debug.Log(new Vector2(h, v) * moveSpeed);
             transform.Translate(new Vector2(h, v) * moveSpeed);
         }
-        // test a git push
+
     }
 }

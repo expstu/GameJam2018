@@ -32,7 +32,7 @@ public class GameManager : BaseManager {
     /// 游戏结束
     /// 1.统计并显示得分面板
     /// </summary>
-    private void GameOver()
+    public void GameOver()
     {
         
     }
